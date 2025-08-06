@@ -1,0 +1,13 @@
+yaml
+version: '3'
+
+services:
+  cheems-bot:
+    build: .
+    container_name: cheems-bot
+    restart: unless-stopped
+    volumes:
+      - ./:/app
+    environment:
+      - NODE_ENV=production
+    command: npm start
