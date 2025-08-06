@@ -1,0 +1,16 @@
+json
+{
+  "name": "cheems-bot",
+  "version": "1.0.0",
+  "description": "Bot WhatsApp multi-device avec pairing code, inspiré de Cheems.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "VotreNom",
+  "license": "MIT",
+  "dependencies": {
+    "@adiwajshing/baileys": "^4.5.0",
+    "pino": "^8.8.0"
+  }
+}
