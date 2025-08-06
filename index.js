@@ -1,4 +1,4 @@
-js
+
 // plugins/ping.js
 module.exports = {
   name: 'ping',
