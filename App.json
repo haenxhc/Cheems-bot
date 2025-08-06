@@ -1,9 +1,9 @@
-```json
+json
 {
   "name": "cheems-bot",
   "description": "Bot WhatsApp multi-device avec pairing code, inspiré de Cheems.",
   "repository": "https://github.com/haenxhc/cheems-bot",
-  "logo": "https://raw.githubusercontent.com/ton-nom-utilisateur/cheems-bot/main/logo.png",
+  "logo": "https://raw.githubusercontent.com/haenxhc/cheems-bot/main/logo.png",
   "keywords": ["whatsapp", "bot", "multi-device", "baileys", "cheems"],
   "buildpacks": [
     {
@@ -17,4 +17,4 @@
     "start": "node index.js"
   }
 }
-```
+
