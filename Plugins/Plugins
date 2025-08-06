@@ -1,0 +1,38 @@
+js
+// plugins/ping.js
+module.exports = {
+  name: 'ping',
+  description: 'Répond pong',
+  category: 'util',
+  async execute(sock, m, args) {
+    await sock.sendMessage(m.chat, { text: 'Pong!' }, { quoted: m })
+  }
+}
+js
+// plugins/groupinfo.js
+module.exports = {
+  name: 'groupinfo',
+  description: 'Affiche les infos du groupe',
+  category: 'group',
+  async execute(sock, m, args) {
+    if (!m.isGroup) return
+    const metadata = await sock.groupMetadata(m.chat)
+    const info = `👥 Nom: metadata.subject👤 Membres:{metadata.participants.length}\n📝 Description: ${metadata.desc || 'Aucune'}`
+    await sock.sendMessage(m.chat, { text: info }, { quoted: m })
+  }
+}
+
+
+js
+// plugins/mentionall.js
+module.exports = {
+  name: 'mentionall',
+  description: 'Mentionne tout le monde',
+  category: 'group',
+  async execute(sock, m, args) {
+    if (!m.isGroup) return
+    const metadata = await sock.groupMetadata(m.chat)
+    const mentions = metadata.participants.map(p => p.id)
+    await sock.sendMessage(m.chat, { text: '👥 @everyone', mentions }, { quoted: m })
+  }
+}
