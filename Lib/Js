@@ -1,0 +1,22 @@
+js
+const isAdmin = async (sock, jid, user) => {
+  try {
+    const groupMetadata = await sock.groupMetadata(jid)
+    const participant = groupMetadata.participants.find(p => p.id === user)
+    return participant?.admin !== null && participant?.admin !== undefined
+  } catch (err) {
+    return false
+  }
+}
+
+const mentionText = (text, ids) => {
+  return {
+    text,
+    mentions: ids
+  }
+}
+
+module.exports = {
+  isAdmin,
+  mentionText
+}
