@@ -1,4 +1,4 @@
-js
+
 const isAdmin = async (sock, jid, user) => {
   try {
     const groupMetadata = await sock.groupMetadata(jid)
